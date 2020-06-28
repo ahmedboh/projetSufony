@@ -1,0 +1,9 @@
+body{
+    background:url('im.jpeg') ;
+    background-size:100%;
+    
+    overflow:hidden;
+}
+th,td{
+    color: crimson; 
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservations {% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/style5.css')}}">
+{% endblock %}
+{% block body %}
+    <br>
+    <h2 align="center" class="text-secondary" style="text-shadow: 0 0 50px red;"><b> les Reservations :</b></h2>
+    <br>
+    <table class="table">
+        <thead>
+            <tr class="text-secondary">
+                <th>Id</th>
+                <th>DateR</th>
+                <th>Etat</th>
+                <th>Nom Client</th>
+                <th>Libelle Service</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr class="text-dark" >
+                <td>{{ reservation.id }}</td>
+                <td>{{ reservation.dateR ? reservation.dateR|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ reservation.etat }}</td>
+                <td><a style="text-decoration: none; font-size:19px;" class="text-secondary" href="{{ path('client_show', {'id':reservation.idCli.id}) }}">{{ reservation.idCli.Nomcli }}</a></td>
+                <td><a style="text-decoration: none; font-size:19px;" class="text-secondary" href="{{ path('service_show', {'id':reservation.idService.id}) }}">{{ reservation.idService.Libelle }}</a></td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('reservation_show', {'id': reservation.id}) }}">detaille</a>
+                    <a class="btn btn-warning" href="{{ path('reservation_edit', {'id': reservation.id}) }}">editer</a>
+                </td>
+            </tr>
+            
+        
+        {% else %}
+            <tr>
+                <td colspan="4" class="text-danger">aucune reservation touvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reservation_new') }}" class="btn btn-outline-success" style="position:absolute;top:15vh;right: 17vw; ">Ajouter Reservation</a>
+{% endblock %}

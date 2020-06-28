@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/style2.css')}}">
+{% endblock %}
+{% block body %}
+   <br>
+
+    <h2 align="center" class="text-secondary"><b> les Services :</b></h2>
+    <a class="btn btn-outline-success" style="position:absolute;top:15vh;right: 17vw; " href="{{ path('service_new') }}">Ajouter service</a>
+     
+    <div class="row">
+        {% for service in services %}
+        <a style="text-decoration: none;" href="{{ path('service_show', {'id': service.id}) }}">
+            <div style=" width:23% ; margin-left: 10px; margin-bottom: 10px; padding: 20px;  "> 
+             <div class="col-sm-2.5"  >
+             <div class="card c1"  >
+			<div align="center">
+            <img  src="{{asset('assets/im2.png')}}" style="height: 112px;width: 210px;padding: 8px;border: 2px solid #F3969A;border-radius: 30%;margin-top: 5px;" />
+	    </div>
+            <div class="card-body">
+                <h4 class="card-title text-danger" align="center">{{ service.libelle }}</h4>
+                <div style="background-color :red;height:2px"></div>
+                       <a style="margin-left:30% ;margin-top:10px" class="btn btn-warning  "href="{{ path('service_edit', {'id': service.id}) }}">editer</a>
+            </div>
+        </div>
+    </div></a>
+</div>
+        {% else %}
+            <tr>
+                <td colspan="4">aucune service </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client {% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/style2.css')}}">
+{% endblock %}
+{% block body %}
+<br>
+
+    <h2 align="center" class="text-secondary"><b> les clients:</b></h2>
+    <a class="btn btn-outline-success" style="position:absolute;top:15vh;right: 17vw; " href="{{ path('client_new') }}">Ajouter client</a>
+    <div class="row">
+        
+{% for client in clients %}
+<div style=" width:30% ; margin-left: 10px; margin-bottom: 10px; padding: 20px;  "> 
+    <div class="col-sm-2.5"  >
+        <div class="card c1"  >
+			<div align="center">
+            <img  src="{{asset('assets/person.png')}}" style="height: 112px;width: 112px;padding: 8px;border: 2px solid #F3969A;border-radius: 50%;10px; margin-top: 5px;" />
+	    </div>
+            <div class="card-body">
+               
+                <h4 class="card-title" align="center">{{ client.nomCli }}</h4>
+                <div style="background-color :red;height:2px"></div>
+                <p class="card-text">
+                    <ul class="list-group list-group-flush" >
+                        <li class="list-group-item " >Prenom : {{ client.prenom }}</li>
+                        <li class="list-group-item">Adresse : {{ client.adresse }}</li>
+                        <li align="center"class="list-group-item text-info"> {{ client.email }}</li>
+                    </ul> 
+                </p>
+                       <a style="margin-left:70px"class="btn btn-secondary" href="{{ path('client_show', {'id': client.id}) }}">Detail</a>
+                       <a  class="btn btn-warning "href="{{ path('client_edit', {'id': client.id}) }}">editer</a>
+            </div>
+        </div>
+    </div>
+</div>
+        {% else %}
+        </div>
+        <br>
+        <h3 align="center" class="text-danger" ><b> aucun  client touvée</b></h3>  
+        {% endfor %}
+
+</div>
+    
+{% endblock %}

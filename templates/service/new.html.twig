@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Service{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/style4.css')}}">
+{% endblock %}
+{% block body %}
+<br>
+    <h1>Créer un nouvel Service</h1>
+<br>
+    {{ include('service/_form.html.twig') }}
+
+    <a style="position:absolute; top:375px;right:800px" href="{{ path('service_index') }}"class="btn btn-outline-success ">Retourner à la liste </a>
+{% endblock %}

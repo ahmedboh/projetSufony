@@ -1,0 +1,9 @@
+.c1{
+    border-radius: 50px;
+    border: 2px solid #F3969A;
+    transition:all 0.3s ease;
+}
+.c1:hover{
+    transform: scale(1.1);
+    
+}

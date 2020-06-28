@@ -1,0 +1,106 @@
+.im3{
+    width:110%;
+    position:relative;
+}
+.div{
+    height:100vh;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0px;
+    z-index: 0;
+    
+}
+body{
+    padding :0;
+    margin:0;
+    font-family:sans-serif;          
+    overflow:hidden;
+}
+.text-box{
+    width:100%;
+    position:absolute;
+    top:80px;
+    left:0px;
+    color:#360681;
+    
+}
+ins{
+    color: red;
+}
+.c{
+    position: absolute;
+    right: 10px;
+    top:0px;
+    width: 660px;
+    font-size: 22px;
+    line-height:80px;
+    margin-right:10px;
+    font-weight: bold;
+    color: rgb(172, 9, 150);
+    
+}
+.c span:nth-child(1){
+    position: absolute;
+    transform: translateY(700px);
+    
+    animation: textup 40s linear 1;
+    animation-fill-mode: forwards;
+}
+.c span:nth-child(2){
+    position: absolute;
+    top:70px;
+    transform: translateY(500px);
+    animation: textup 40s linear 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    
+}
+.c span:nth-child(3){
+    position: absolute;
+    top:140px;
+    transform: translateY(700px);
+    animation: textup 40s linear 1;
+    animation-fill-mode: forwards;
+    animation-delay: 4s ;
+    
+}
+@keyframes textup{
+    
+    10%{
+        transform: translateY(0px);
+    }
+    100%{
+       transform: translateY(0px);
+   }    
+   }
+
+   .c pre{
+    position: absolute;
+    top:300px;
+    line-height:30px;
+    opacity: 0;
+    color: rgb(172, 9, 150);
+    animation: an 40s linear 1;
+    animation-fill-mode: forwards;
+    animation-delay: 7s ;  
+}
+@keyframes an{
+    
+    10%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+   }  
+}
+.img{
+    height: 90px;
+    width: 90px;
+    padding: 12px;
+    border-radius: 50%;
+     margin-top: 5px;
+     margin-left: 220px;
+    
+    
+}  

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Reservation{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/style0.css')}}">
+{% endblock %}
+{% block body %}
+<br>
+    <h1>Créer un nouvelle Reservation</h1>
+
+    {{ include('reservation/_form.html.twig') }}
+
+    <a style="position:absolute; top:505px;right:800px" class="btn btn-outline-success " href="{{ path('reservation_index') }}">Retourner à la liste </a>
+{% endblock %}

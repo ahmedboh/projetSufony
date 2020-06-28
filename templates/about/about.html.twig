@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}about{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/style.css')}}">
+{% endblock %}
+{% block body %}
+
+
+
+
+<div class="div" >
+<img src="{{asset('assets/img6.jpg')}} " class="im3" >
+<div class="text-box ">
+<img src="{{asset('assets/img.png')}} " width="800"  height="500">
+<p> <h3 class="c"><span > client(<ins>id cli</ins>,nom cli,prenom,adresse,email)<br></span>
+        <span>service(<ins>id service </ins>,liblle,description)<br></span>
+        <span>reservation(<ins>id reservation</ins>,<ins>#id client </ins>,<ins>#id service</ins>,date r,etat)</span>
+        <pre>    <img src="{{asset('assets/img7.jpg')}} "  class="img">         
+                Elaborée par :Werfelli Ahmed
+                      CopyRight &copy; 2020 
+                 </pre> </h3></p>
+        
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Client{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/style4.css')}}">
+{% endblock %}
+{% block body %}
+<br>
+
+    <h1>Créer un nouvel Client</h1>
+
+    {{ include('client/_form.html.twig') }}
+
+     <a style="position:absolute; top:500px;right:800px" href="{{ path('client_index') }}"class="btn btn-outline-success ">Retourner à la liste </a>
+{% endblock %}

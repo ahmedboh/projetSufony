@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Service{% endblock %}
+
+{% block body %}
+<br>
+    <h1 align="center " style="color:deeppink"><b>Service</b> </h1>
+    <br>
+     <img  src="{{asset('assets/im2.png')}}" style="height: 400px;width: 500px; float:left ;border-right: 2px solid deeppink;margin-right: 15px;border-bottom: 2px solid deeppink;margin-bottom: 15px;border-radius: 10%;" />
+    
+       
+<pre >
+<h3 style=" font-family:   Charcoal;"><span style="color:red">Id :</span>                                         {{ service.id }}</h3>
+
+<h3 style=" font-family:   Charcoal;"><span style="color:red">Libelle :</span>                               {{ service.libelle }}</h3>
+
+<h3 style=" font-family:   Charcoal;"><span style="color:red">Description :</span> </h3>
+</pre>
+<span  style=" font-size:16px;font-family:  'Comic Sans MS';">
+{{ service.description }}
+</span>       
+          
+        
+
+
+   <a style="position:absolute; top:102px;right:200px" href="{{ path('service_index') }}"class="btn btn-outline-success ">Retourner à la liste </a>
+
+    <a class="btn btn-outline-warning" style="position:absolute; top:220px;left:20px" href="{{ path('service_edit', {'id': service.id}) }}">editer</a>
+<span  style="position:absolute; top:180px;left:5px">
+    {{ include('service/_delete_form.html.twig') }}
+</span>   
+{% endblock %}
